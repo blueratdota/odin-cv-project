@@ -1,0 +1,29 @@
+.app {
+    display: flex;
+    gap: 84px;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.edit-area {
+    flex: 1 0 35%;
+    max-width: 575px;
+}
+
+.header {
+    background-color: blue;
+    font-size: 2rem;
+}
+
+.preview-area {
+    flex: 1 1 60%;
+    background-color: white;
+    max-width: 850px;
+    aspect-ratio: 0.77;
+}
+
+/* CV PRINT AREA */
