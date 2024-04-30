@@ -6,7 +6,8 @@ export default function BasicTextFields({
     label,
     required,
     className,
-    defaultValue
+    defaultValue,
+    onChange
 }) {
     return (
         <Box
@@ -16,7 +17,7 @@ export default function BasicTextFields({
             noValidate
             autoComplete="off"
         >
-            <TextField fullWidth label={label} variant="outlined" defaultValue={defaultValue} />
+            <TextField fullWidth label={label} variant="outlined" defaultValue={defaultValue} onChange={onChange} />
 
 
 

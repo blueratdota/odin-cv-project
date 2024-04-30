@@ -41,9 +41,9 @@ export default function ListDividers({ data }) {
 
                     return (
                         <>
-                            <ListItem >
+                            <ListItem key={index}  >
                                 <ListItemText primary={x.name}></ListItemText>
-                                <div onClick={() => handleChangeIcon()}>{
+                                <div onClick={() => handleChangeIcon()} >{
                                     icon == 'visible' ? <VisibilityIcon /> : <VisibilityOffIcon />}</div>
 
                             </ListItem >
