@@ -1,0 +1,64 @@
+.cv-header {
+    background-color: rgb(255, 159, 34);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-name {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    padding: 18px;
+}
+
+.cv-person-details {
+    display: flex;
+    gap: 24px;
+}
+
+.cv-person-details>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-content {
+    margin: 48px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cv-subheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(219, 219, 219);
+    font-size: 1.3rem;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.entry-container {
+    padding: 12px 0 12px 0;
+    display: flex;
+}
+
+.entry-name {
+    font-weight: bold;
+}
+
+.left-details,
+.right-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.left-details {
+    flex: 0 0 40%;
+}

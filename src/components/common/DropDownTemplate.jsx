@@ -14,41 +14,59 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
 
-export default function AccordionUsage({ title, children, editForm }) {
-    const [display, setDisplay] = React.useState('show')
-    const [mode, setMode] = React.useState('show')
+export default function AccordionUsage({ title, children, editForm, data, changeMode, currentMode }) {
+    // const [display, setDisplay] = React.useState('show')
+    // const [mode, setMode] = React.useState('show')
 
-    function displayThis() {
-        if (mode == 'show') {
-            return (
-                <>
-                    {children}
-                    <div className='button-container'>
-                        <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('edit')}>
+    // function displayThis() {
+    //     if (mode == 'show') {
+    //         return (
+    //             <>
+    //                 {children}
+    //                 <div className='button-container'>
+    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('edit')}>
 
-                            <span className="material-symbols-outlined">
-                                add_circle
-                            </span>
-                            Add Entry
-                        </Button>
-                    </div>
+    //                         <span className="material-symbols-outlined">
+    //                             add_circle
+    //                         </span>
+    //                         Add Entry
+    //                     </Button>
+    //                 </div>
 
-                </>
+    //             </>
 
 
-            )
+    //         )
+    //     }
+    //     else {
+    //         return (
+    //             <>
+    //                 {editForm}
+    //                 <div className='button-container'>
+    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('show')}>Cancel</Button>
+    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => addData()}>Add</Button>
+    //                 </div>
+
+    //             </>
+    //         )
+    //     }
+    // }
+
+    // function addData() {
+    //     console.log('add data clicked');
+    // }
+
+
+
+
+
+    function handleClick() {
+        console.log(currentMode);
+        if (currentMode == 'show') {
+            changeMode('edit')
         }
-        else {
-            return (
-                <>
-                    {editForm}
-                    <div className='button-container'>
-                        <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('show')}>Add Entry</Button>
-                    </div>
+        else changeMode('show')
 
-                </>
-            )
-        }
     }
 
     return (
@@ -61,8 +79,9 @@ export default function AccordionUsage({ title, children, editForm }) {
                     <h2 className='accordion-header'>{title}</h2>
                 </AccordionSummary>
 
-                <AccordionDetails className='accordion-details'>
-                    {displayThis()}
+                <AccordionDetails className='accordion-details' hickey={'ree'}>
+                    {children}
+                    <button onClick={handleClick}>cancel</button>
                 </AccordionDetails>
             </Accordion>
         </div >

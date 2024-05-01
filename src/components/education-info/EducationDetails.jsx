@@ -2,7 +2,7 @@ import { red } from '@mui/material/colors';
 import BasicTextFields from '../common/InputField.jsx'
 import MultilineTextFields from '../common/MultiLineInputField.jsx'
 
-export default function EducationDetails() {
+export default function EducationDetails({ hickey }) {
     return (
         <div className='add-details'>
             <BasicTextFields label={'School'} />
@@ -17,6 +17,10 @@ export default function EducationDetails() {
 
             </div>
             <BasicTextFields label={'Location'} />
+            <div className='butto-container'>
+                <button>xx</button>
+                <button>ss</button>
+            </div>
         </div>
 
     )

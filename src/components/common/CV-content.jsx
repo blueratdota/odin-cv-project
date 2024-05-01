@@ -1,18 +1,20 @@
-export default function CVContent({ education }) {
+import '../../styles/cv-layout1.css'
+
+export default function CVContent({ education, experience }) {
     return (
         <div className="cv-content">
             <div className="cv-education">
-                <h3>Education</h3>
+                <div className='cv-subheader'><h3>Education</h3></div>
                 {education.map((entry, index) => {
                     return (
-                        <div key={index}>
-                            <div>
+                        <div className="entry-container" key={index}>
+                            <div className="left-details">
                                 <div>{entry.startDate} - {entry.endDate}</div>
                                 <div>{entry.location}</div>
                             </div>
-                            <div>
-                                <div>{entry.name}</div>
-                                <div>{entry.degree}</div>
+                            <div className="right-details">
+                                <div className='entry-name'>{entry.name}</div>
+                                <div className='entry-degree'>{entry.degree}</div>
                             </div>
                         </div>
 
@@ -21,8 +23,24 @@ export default function CVContent({ education }) {
             </div>
 
             <div className="cv-experience">
-                <h3>Professional Experience</h3>
+                <div className='cv-subheader'><h3>Professional Experience</h3></div>
+                {experience.map((entry, index) => {
+                    return (
+                        <div className="entry-container" key={index}>
+                            <div className="left-details">
+                                <div>{entry.startDate} - {entry.endDate}</div>
+                                <div>{entry.location}</div>
+                            </div>
+                            <div className="right-details">
+                                <div className='entry-name'>{entry.name}</div>
+                                <div className='entry-position'>{entry.position}</div>
+                                <div>{entry.description}</div>
+                            </div>
+                        </div>
+
+                    )
+                })}
             </div>
-        </div>
+        </div >
     )
 }

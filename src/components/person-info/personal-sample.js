@@ -2,7 +2,7 @@ const PersonSample =
 {
     name: 'John The Programmer',
     email: 'jprogrammer@gmail.com',
-    phoneNumber: '+639xxxxxxx55',
+    phoneNumber: '+639994950022',
     address: 'Davao City, Philippines'
 }
 

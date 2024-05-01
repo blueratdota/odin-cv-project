@@ -24,8 +24,9 @@ const expData = ExperienceSample
 function App() {
     const [personData, setPersonData] = useImmer({ ...PersonSample })
     const [educData, setEducData] = useImmer(EducationSample)
-
-    console.log(educData);
+    const [expData, setExpData] = useImmer(ExperienceSample)
+    //accordion UI
+    const [educMode, setEducMode] = useState('show')
 
     return (
         <div className="app">
@@ -34,8 +35,9 @@ function App() {
                 <div className="detail-container">
                     <PersonalDetails person={personData} changeData={setPersonData} />
 
-                    <AccordionUsage title={'Education'} editForm={<EducationDetails />}>
-                        <ListDividers data={educData} />
+                    <AccordionUsage title={'Education'} changeMode={setEducMode} currentMode={educMode}>
+                        {educMode == 'show' ? <ListDividers data={educData} /> : <EducationDetails />}
+
                     </AccordionUsage>
 
                     <AccordionUsage title={'Experience'} editForm={<ExperienceDetails />}>
@@ -49,7 +51,7 @@ function App() {
             <div className="preview-area">
                 <div className="cv-body">
                     <CVHeader person={personData} />
-                    <CVContent education={educData} />
+                    <CVContent education={educData} experience={expData} />
                 </div>
                 <div>download and full screen view</div>
             </div>
