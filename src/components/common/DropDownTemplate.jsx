@@ -69,6 +69,21 @@ export default function AccordionUsage({ title, children, editForm, data, change
 
     }
 
+    function AddButton() {
+        return (<div className='button-container'>
+            <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={handleClick}>
+
+                <span className="material-symbols-outlined">
+                    add_circle
+                </span>
+                Add Entry
+            </Button>
+        </div>)
+    }
+    function AnotherButton() {
+        return <button onClick={handleClick}>cancel</button>
+    }
+
     return (
         <div>
             <Accordion>
@@ -81,7 +96,9 @@ export default function AccordionUsage({ title, children, editForm, data, change
 
                 <AccordionDetails className='accordion-details' hickey={'ree'}>
                     {children}
-                    <button onClick={handleClick}>cancel</button>
+                    {currentMode == 'show' ? <AddButton /> : <AnotherButton />}
+
+
                 </AccordionDetails>
             </Accordion>
         </div >

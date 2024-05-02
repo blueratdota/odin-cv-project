@@ -28,6 +28,8 @@ function App() {
     //accordion UI
     const [educMode, setEducMode] = useState('show')
 
+
+
     return (
         <div className="app">
             <div className="edit-area">
@@ -36,7 +38,7 @@ function App() {
                     <PersonalDetails person={personData} changeData={setPersonData} />
 
                     <AccordionUsage title={'Education'} changeMode={setEducMode} currentMode={educMode}>
-                        {educMode == 'show' ? <ListDividers data={educData} /> : <EducationDetails />}
+                        {educMode == 'show' ? <ListDividers data={educData} /> : <EducationDetails data={educData} updateData={setEducData} changeMode={setEducMode} />}
 
                     </AccordionUsage>
 
