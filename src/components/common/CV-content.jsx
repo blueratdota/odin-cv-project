@@ -28,20 +28,23 @@ export default function CVContent({ education, experience }) {
             <div className="cv-experience">
                 <div className='cv-subheader'><h3>Professional Experience</h3></div>
                 {experience.map((entry, index) => {
-                    return (
-                        <div className="entry-container" key={index}>
-                            <div className="left-details">
-                                <div>{entry.startDate} - {entry.endDate}</div>
-                                <div>{entry.location}</div>
+                    if (entry.showOnCV) {
+                        return (
+                            <div className="entry-container" key={index}>
+                                <div className="left-details">
+                                    <div>{entry.startDate} - {entry.endDate}</div>
+                                    <div>{entry.location}</div>
+                                </div>
+                                <div className="right-details">
+                                    <div className='entry-name'>{entry.name}</div>
+                                    <div className='entry-position'>{entry.position}</div>
+                                    <div>{entry.description}</div>
+                                </div>
                             </div>
-                            <div className="right-details">
-                                <div className='entry-name'>{entry.name}</div>
-                                <div className='entry-position'>{entry.position}</div>
-                                <div>{entry.description}</div>
-                            </div>
-                        </div>
 
-                    )
+                        )
+                    }
+
                 })}
             </div>
         </div >

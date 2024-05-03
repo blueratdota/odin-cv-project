@@ -27,7 +27,7 @@ export default function ListDividers({ data, updateData }) {
         updateData(data.map((entry) => {
 
             if (entry.name == entryData.name) {
-                console.log(entry.name);
+                console.log(entryData);
 
                 return { ...entry, showOnCV: !entryData.showOnCV }
             }
@@ -42,7 +42,7 @@ export default function ListDividers({ data, updateData }) {
 
                     return (
                         <>
-                            <ListItem key={index}  >
+                            <ListItem key={index} onClick={() => console.log(index)}  >
                                 <ListItemText primary={entry.name}></ListItemText>
                                 <div onClick={(e) => handleChangeIcon(entry)} >{
                                     entry.showOnCV ? <VisibilityIcon /> : <VisibilityOffIcon />}</div>

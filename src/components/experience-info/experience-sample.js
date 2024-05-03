@@ -18,12 +18,12 @@ const ExperienceSample = [
         showOnCV: true
     },
     {
-        name: 'San Miguelxxxxxxxx Foods Incorporated',
-        position: 'Feedmill Engineer',
-        startDate: 'April 2022',
-        endDate: 'Present',
-        location: 'Darong, Santa Cruz',
-        description: 'Assigned to various roles such as SAP ERP and operation of Buhler equipment',
+        name: 'Google',
+        position: 'Full Stack Dev',
+        startDate: 'April 2025',
+        endDate: 'Future',
+        location: 'Home',
+        description: 'REEEEEEEEEEEEEEEEEEE',
         showOnCV: false
     }
 ]
