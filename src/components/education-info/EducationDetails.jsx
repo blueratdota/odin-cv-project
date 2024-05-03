@@ -1,19 +1,15 @@
-import { red } from '@mui/material/colors';
 import BasicTextFields from '../common/InputField.jsx'
-import MultilineTextFields from '../common/MultiLineInputField.jsx'
 import { useImmer } from 'use-immer';
 
-
-
-
-export default function EducationDetails({ hickey, data, updateData, changeMode }) {
+export default function EducationDetails({ data, updateData, changeMode }) {
     const [fieldData, setInputData] = useImmer(
         {
             name: '',
             degree: '',
             startDate: '',
             endDate: '',
-            location: ''
+            location: '',
+            showOnCV: true
         })
 
     let currentData = fieldData

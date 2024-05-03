@@ -27,6 +27,7 @@ function App() {
     const [expData, setExpData] = useImmer(ExperienceSample)
     //accordion UI
     const [educMode, setEducMode] = useState('show')
+    const [expMode, setExpMode] = useState('show')
 
 
 
@@ -38,14 +39,18 @@ function App() {
                     <PersonalDetails person={personData} changeData={setPersonData} />
 
                     <AccordionUsage title={'Education'} changeMode={setEducMode} currentMode={educMode}>
-                        {educMode == 'show' ? <ListDividers data={educData} /> : <EducationDetails data={educData} updateData={setEducData} changeMode={setEducMode} />}
+                        {educMode == 'show' ?
+                            <ListDividers data={educData} updateData={setEducData} /> :
+                            <EducationDetails data={educData} updateData={setEducData} changeMode={setEducMode} />}
 
                     </AccordionUsage>
 
-                    <AccordionUsage title={'Experience'} editForm={<ExperienceDetails />}>
-                        <ListDividers data={expData} />
-                    </AccordionUsage>
+                    <AccordionUsage title={'Experience'} changeMode={setExpMode} currentMode={expMode}>
+                        {expMode == 'show' ?
+                            <ListDividers data={expData} updateData={setExpData} /> :
+                            <ExperienceDetails data={expData} updateData={setExpData} changeMode={setExpMode} />}
 
+                    </AccordionUsage>
 
                 </div>
                 <div>footer </div> {/*make this a component, switching between input details, and edit layout of cv  */}

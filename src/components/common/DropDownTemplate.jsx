@@ -15,48 +15,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
 export default function AccordionUsage({ title, children, editForm, data, changeMode, currentMode }) {
-    // const [display, setDisplay] = React.useState('show')
-    // const [mode, setMode] = React.useState('show')
-
-    // function displayThis() {
-    //     if (mode == 'show') {
-    //         return (
-    //             <>
-    //                 {children}
-    //                 <div className='button-container'>
-    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('edit')}>
-
-    //                         <span className="material-symbols-outlined">
-    //                             add_circle
-    //                         </span>
-    //                         Add Entry
-    //                     </Button>
-    //                 </div>
-
-    //             </>
-
-
-    //         )
-    //     }
-    //     else {
-    //         return (
-    //             <>
-    //                 {editForm}
-    //                 <div className='button-container'>
-    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => setMode('show')}>Cancel</Button>
-    //                     <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={() => addData()}>Add</Button>
-    //                 </div>
-
-    //             </>
-    //         )
-    //     }
-    // }
-
-    // function addData() {
-    //     console.log('add data clicked');
-    // }
-
-
 
 
 
@@ -81,7 +39,15 @@ export default function AccordionUsage({ title, children, editForm, data, change
         </div>)
     }
     function AnotherButton() {
-        return <button onClick={handleClick}>cancel</button>
+        return (<div className='button-container'>
+            <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={handleClick}>
+                Cancel
+            </Button>
+        </div>)
+
+
+
+        // <button onClick={handleClick}>cancel</button>
     }
 
     return (
@@ -94,11 +60,9 @@ export default function AccordionUsage({ title, children, editForm, data, change
                     <h2 className='accordion-header'>{title}</h2>
                 </AccordionSummary>
 
-                <AccordionDetails className='accordion-details' hickey={'ree'}>
+                <AccordionDetails className='accordion-details'>
                     {children}
                     {currentMode == 'show' ? <AddButton /> : <AnotherButton />}
-
-
                 </AccordionDetails>
             </Accordion>
         </div >

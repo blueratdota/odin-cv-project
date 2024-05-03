@@ -21,30 +21,31 @@ const style = {
     backgroundColor: 'background.paper',
 };
 
-export default function ListDividers({ data }) {
+export default function ListDividers({ data, updateData }) {
 
+    function handleChangeIcon(entryData) {
+        updateData(data.map((entry) => {
+
+            if (entry.name == entryData.name) {
+                console.log(entry.name);
+
+                return { ...entry, showOnCV: !entryData.showOnCV }
+            }
+            else return entry
+        }))
+    }
 
     return (
         <List sx={style} aria-label="mailbox folders">
             {
-                data.map((x, index) => {
-                    const [icon, setIcon] = React.useState('visible')
-
-                    function handleChangeIcon() {
-                        if (icon == 'visible') {
-                            setIcon('not visible')
-                        }
-                        else setIcon('visible')
-
-
-                    }
+                data.map((entry, index) => {
 
                     return (
                         <>
                             <ListItem key={index}  >
-                                <ListItemText primary={x.name}></ListItemText>
-                                <div onClick={() => handleChangeIcon()} >{
-                                    icon == 'visible' ? <VisibilityIcon /> : <VisibilityOffIcon />}</div>
+                                <ListItemText primary={entry.name}></ListItemText>
+                                <div onClick={(e) => handleChangeIcon(entry)} >{
+                                    entry.showOnCV ? <VisibilityIcon /> : <VisibilityOffIcon />}</div>
 
                             </ListItem >
                             {index + 1 !== data.length ? <Divider component="li" /> : null
@@ -56,21 +57,7 @@ export default function ListDividers({ data }) {
                 })
             }
 
-            {/* <ListItem>
-                <ListItemText primary="Inbox" />
-            </ListItem>
-            <Divider component="li" />
-            <ListItem>
-                <ListItemText primary="Drafts" />
-            </ListItem>
-            <Divider component="li" />
-            <ListItem>
-                <ListItemText primary="Trash" />
-            </ListItem>
-            <Divider component="li" />
-            <ListItem>
-                <ListItemText primary="Spam" />
-            </ListItem> */}
+
         </List >
     );
 }
