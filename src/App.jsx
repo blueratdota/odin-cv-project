@@ -28,6 +28,7 @@ function App() {
     //accordion UI
     const [educMode, setEducMode] = useState('show')
     const [expMode, setExpMode] = useState('show')
+    const [toUpdate, setToUpdate] = useState('')
 
 
 
@@ -40,15 +41,15 @@ function App() {
 
                     <AccordionUsage title={'Education'} changeMode={setEducMode} currentMode={educMode}>
                         {educMode == 'show' ?
-                            <ListDividers data={educData} updateData={setEducData} /> :
-                            <EducationDetails data={educData} updateData={setEducData} changeMode={setEducMode} />}
+                            <ListDividers data={educData} updateData={setEducData} changeMode={setEducMode} currentMode={educMode} type={'educ'} /> :
+                            <EducationDetails data={educData} updateData={setEducData} changeMode={setEducMode} currentMode={educMode} />}
 
                     </AccordionUsage>
 
                     <AccordionUsage title={'Experience'} changeMode={setExpMode} currentMode={expMode}>
                         {expMode == 'show' ?
-                            <ListDividers data={expData} updateData={setExpData} /> :
-                            <ExperienceDetails data={expData} updateData={setExpData} changeMode={setExpMode} />}
+                            <ListDividers data={expData} updateData={setExpData} changeMode={setExpMode} currentMode={expMode} type={'exp'} /> :
+                            <ExperienceDetails data={expData} updateData={setExpData} changeMode={setExpMode} currentMode={expMode} />}
 
                     </AccordionUsage>
 

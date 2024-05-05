@@ -57,7 +57,6 @@ export default function ExperienceDetails({ data, updateData, changeMode }) {
             <BasicTextFields label={'Description'} onChange={handleDescriptionInput} />
             <div className='butto-container'>
                 <button onClick={updateDataList}>save</button>
-                <button>delete</button>
             </div>
         </div>
 

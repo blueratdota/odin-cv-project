@@ -16,40 +16,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export default function AccordionUsage({ title, children, editForm, data, changeMode, currentMode }) {
 
-
-
-    function handleClick() {
-        console.log(currentMode);
-        if (currentMode == 'show') {
-            changeMode('edit')
-        }
-        else changeMode('show')
-
-    }
-
-    function AddButton() {
-        return (<div className='button-container'>
-            <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={handleClick}>
-
-                <span className="material-symbols-outlined">
-                    add_circle
-                </span>
-                Add Entry
-            </Button>
-        </div>)
-    }
-    function AnotherButton() {
-        return (<div className='button-container'>
-            <Button variant="outlined" sx={{ p: 1, maxWidth: 140 }} onClick={handleClick}>
-                Cancel
-            </Button>
-        </div>)
-
-
-
-        // <button onClick={handleClick}>cancel</button>
-    }
-
     return (
         <div>
             <Accordion>
@@ -62,7 +28,7 @@ export default function AccordionUsage({ title, children, editForm, data, change
 
                 <AccordionDetails className='accordion-details'>
                     {children}
-                    {currentMode == 'show' ? <AddButton /> : <AnotherButton />}
+
                 </AccordionDetails>
             </Accordion>
         </div >
